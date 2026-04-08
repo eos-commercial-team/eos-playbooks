@@ -632,11 +632,11 @@
     <div>
       <div class="footer-brand">EOS Hospitality</div>
       <div class="footer-sub">Commercial Playbook<br>Internal Use Only &middot; April 2026</div>
-  
+    </div>
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function toggleSection(header) {
   header.classList.toggle('open');
   const body = header.parentElement.querySelector('.section-body');
@@ -658,3 +658,13 @@ document.querySelectorAll('.jump-btn').forEach(btn => {
         if (h && b) { h.classList.remove('open'); b.classList.remove('open'); }
       });
       const header = target.querySelector('.section-header');
+      const body = target.querySelector('.section-body');
+      if (header && body) { header.classList.add('open'); body.classList.add('open'); }
+      target.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
