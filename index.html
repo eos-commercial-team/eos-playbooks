@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Director of Marketing - Role Manual | EOS Hospitality</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --true-black: #000000;
+    --night: #333334;
+    --building-block: #AD9A99;
+    --warm-welcome: #DBD0D0;
+    --dawn: #EDF0FF;
+    --white: #FFFFFF;
+    --body-bg: #FAFAFA;
+    --card-bg: #FFFFFF;
+    --border: #DBD0D0;
+    --text-primary: #333334;
+    --text-secondary: #5C5455;
+    --text-muted: #AD9A99;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    background: var(--body-bg);
+    color: var(--text-primary);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.02em;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--night);
+    padding: 80px 40px 68px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 70%; height: 200%;
+    background: radial-gradient(ellipse, rgba(173,154,153,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--building-block);
+    border: 1px solid rgba(173,154,153,0.3);
+    padding: 6px 18px;
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--white);
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+  }
+  .hero p {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: 580px;
+    letter-spacing: 0.04em;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .hero-meta-item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .hero-meta-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.35);
+  }
+  .hero-meta-value {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--building-block);
+    letter-spacing: 0.1em;
+  }
+  .hero-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--building-block);
+    margin-top: 36px;
+    opacity: 0.4;
+  }
+
+  /* JUMP NAV */
+  .jump-nav {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 40px 0;
+  }
+  .jump-nav-inner {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 20px 28px;
+  }
+  .jump-nav-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+  .jump-nav-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+  .jump-btn {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--dawn);
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    color: var(--night);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+  .jump-btn:hover {
+    background: var(--night);
+    color: var(--white);
+  }
+
+  /* CONTENT */
+  .content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  /* INTRO */
+  .intro { padding: 40px 0 16px; }
+  .intro p {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    letter-spacing: 0.03em;
+  }
+
+  /* SECTIONS */
+  .manual-section { padding-top: 48px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    user-select: none;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+  }
+  .section-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--building-block);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dawn);
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--true-black);
+    flex: 1;
+    letter-spacing: 0.02em;
+  }
+  .section-toggle {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--building-block);
+    transition: opacity 0.3s;
+  }
+  .section-header:hover .section-toggle { opacity: 0.6; }
+  .section-header.open .section-toggle-text::after { content: 'COLLAPSE'; }
+  .section-header:not(.open) .section-toggle-text::after { content: 'EXPAND'; }
+
+  .section-intro {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin: 12px 0 28px;
+    max-width: 620px;
+    letter-spacing: 0.03em;
+  }
+
+  .section-body {
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+    max-height: 0;
+    opacity: 0;
+  }
+  .section-body.open {
+    max-height: 12000px;
+    opacity: 1;
+  }
+
+  /* CATEGORY */
+  .category {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .category-header {
+    padding: 18px 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s;
+  }
+  .category-header:hover { background: var(--dawn); }
+  .category-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--night);
+    letter-spacing: 0.02em;
+  }
+  .category-count {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-left: 12px;
+  }
+  .category-chevron {
+    color: var(--building-block);
+    font-size: 14px;
+    transition: transform 0.3s;
+  }
+  .category-header.open .category-chevron { transform: rotate(180deg); }
+  .category-header.open { background: var(--dawn); border-bottom: 1px solid var(--border); }
+
+  .category-body {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+  }
+  .category-body.open { max-height: 8000px; opacity: 1; }
+
+  /* TASK ITEMS */
+  .task-item {
+    padding: 20px 28px;
+    border-bottom: 1px solid rgba(219,208,208,0.4);
+  }
+  .task-item:last-child { border-bottom: none; }
+  .task-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--true-black);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+  }
+  .task-bullet {
+    width: 6px; height: 6px;
+    background: var(--building-block);
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+  .task-context {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-left: 20px;
+    margin-top: 4px;
+    letter-spacing: 0.03em;
+  }
+
+  /* RESOURCE LINKS */
+  .resource-box {
+    margin: 16px 0 4px 20px;
+    padding: 14px 18px;
+    background: var(--dawn);
+    border-left: 3px solid var(--building-block);
+  }
+  .resource-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .resource-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--night);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  .resource-link:hover { color: var(--building-block); }
+  .resource-link .arrow { font-size: 12px; color: var(--building-block); }
+  .resource-tag {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: var(--warm-welcome);
+    padding: 2px 8px;
+  }
+
+  /* WHY BOX */
+  .why-box {
+    margin: 24px 0 12px;
+    padding: 22px 26px;
+    background: var(--warm-welcome);
+    border-left: 3px solid var(--building-block);
+  }
+  .why-box-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--night);
+    margin-bottom: 10px;
+  }
+  .why-box p {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    letter-spacing: 0.03em;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--true-black);
+    padding: 48px 40px;
+  }
+  .footer-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.08em;
+  }
+  .footer-sub {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-top: 8px;
+    line-height: 1.8;
+  }
+  .footer-contact {
+    text-align: right;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.3);
+    line-height: 1.8;
+  }
+  .footer-contact a {
+    color: var(--building-block);
+    text-decoration: none;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero { padding: 48px 24px 40px; }
+    .hero h1 { font-size: 32px; }
+    .jump-nav { padding: 20px 24px 0; }
+    .content { padding: 0 24px 60px; }
+    .section-title { font-size: 22px; }
+    .hero-meta { flex-direction: column; gap: 8px; }
+    .footer-inner { flex-direction: column; gap: 20px; }
+    .footer-contact { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Role Manual</div>
+    <h1>Director of Marketing</h1>
+    <p>This manual defines what it means to lead marketing at an EOS Hospitality property. Whether you are joining the team for the first time or you have been with us for years, this is the shared standard we hold ourselves to.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><span class="hero-meta-label">Last Updated</span><span class="hero-meta-value">April 2026</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Sections</span><span class="hero-meta-value">6</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Cadences</span><span class="hero-meta-value">Daily to Annual</span></div>
+    </div>
+    <div class="hero-divider"></div>
+  </div>
+</div>
+
+<div class="jump-nav">
+  <div class="jump-nav-inner">
+    <div class="jump-nav-label">Jump to Section</div>
+    <div class="jump-nav-buttons">
+      <a class="jump-btn" href="#culture">Culture</a>
+      <a class="jump-btn" href="#daily">Daily</a>
+      <a class="jump-btn" href="#weekly">Weekly</a>
+      <a class="jump-btn" href="#monthly">Monthly</a>
+      <a class="jump-btn" href="#quarterly">Quarterly</a>
+      <a class="jump-btn" href="#annual">Annual</a>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="intro">
+    <p>Marketing at EOS is both strategic and hands-on. You are the person connecting brand vision to daily execution, translating data into direction, and making sure every guest touchpoint reflects who we are as a property and as a company.</p>
+    <p>Use this manual as your operating framework. Come back to it when priorities shift, when you are onboarding a new team member, or when you want to gut-check that nothing is slipping through the cracks. The expectations here are not aspirational. They are the baseline for how we run marketing across the portfolio.</p>
+  </div>
+
+  <!-- CULTURE -->
+  <div class="manual-section" id="culture">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-letter">C</div>
+      <div class="section-title">Culture</div>
+      <div class="section-toggle"><span class="section-toggle-text"></span></div>
+    </div>
+    <p class="section-intro">Before anything else, every member of the commercial team should be grounded in who we are. Our culture is not a poster on the wall. It is the lens through which we make decisions, interact with guests, and represent our properties.</p>
+    <div class="section-body">
+      <div class="category">
+        <div class="category-header open"><div><span class="category-name">EOS Culture Card</span><span class="category-count">2 items</span></div></div>
+        <div class="category-body open">
+          <div class="task-item">
+            <div class="task-title"><div class="task-bullet"></div>Keep a copy of the EOS ETHOS on your person while on property.</div>
+            <div class="task-context">This is not symbolic. It is a reference point for how we operate and what we stand for. If someone asks you what EOS is about, you should be able to answer without hesitation.</div>
+          </div>
+          <div class="task-item">
+            <div class="task-title"><div class="task-bullet"></div>Be able to explain the relevance of at least two of our positioning statements.</div>
+            <div class="task-context">You do not need to recite them word for word, but you should understand what they mean and how they connect to the work your team does every day.</div>
+          </div>
+        </div>
+      </div>
+      <div class="why-box">
+        <div class="why-box-title">Why This Matters</div>
+        <p>Culture is the foundation of brand. If the marketing team does not understand and embody the brand, no campaign or creative asset will make up for it. Every piece of content you produce, every vendor you brief, and every guest interaction your property delivers should be informed by these principles.</p>
+      </div></div>
+  </div>
+
+  <!-- DAILY -->
+  <div class="manual-section" id="daily">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-letter">D</div>
+      <div class="section-title">Daily Responsibilities</div>
+      <div class="section-toggle"><span class="section-toggle-text"></span></div>
+    </div>
+    <p class="section-intro">Your daily rhythm is the engine of your marketing operation. These activities should feel like second nature. If you are new to the role, focus here first. Master the daily rhythm before layering in everything else.</p>
+    <div class="section-body">
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Marketing Orchestration</span><span class="category-count">5 items</span></div><span class="category-chevron">&#9662;</span></div>
+        <div class="category-body">
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Monitor work progress, provide feedback, and troubleshoot issues.</div><div class="task-context">Check in on active projects and campaigns. Know where things stand before someone has to tell you. If something is stalled, your job is to unstick it.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Review and approve marketing materials.</div><div class="task-context">Nothing goes out the door without your eyes on it. This includes social posts, email campaigns, website updates, printed collateral, and any guest-facing communications. You are the quality filter.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Coordinate with internal and external resources on project tasks and campaign tactics.</div><div class="task-context">You are working with your on-property team, corporate marketing, agency partners, and vendors daily. Make sure everyone knows what they are responsible for and when it is due.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Triage and assign new requests, resolve tickets.</div><div class="task-context">Requests come in from the GM, sales, F&B, ownership, and corporate. Your job is to evaluate, prioritize, and route them. Not everything is urgent. Part of your value is knowing the difference.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Develop creative briefs, channel plans, and maintain project trackers.</div><div class="task-context">Good marketing starts with a clear brief. Every campaign, initiative, or request should have a documented scope before work begins.</div></div>
+        </div>
+      </div>
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Strategic Oversight</span><span class="category-count">6 items</span></div><span class="category-chevron">&#9662;</span></div>
+        <div class="category-body">
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Review overall hotel performance and coordinate with revenue and sales on urgent items.</div><div class="task-context">You do not operate in a silo. Check pickup, pace, and any revenue alerts. If there is a need date or a soft period, marketing should be part of the response.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Monitor active campaigns and performance metrics to ensure KPIs are tracking toward goals.</div><div class="task-context">If you have paid media, email, or social campaigns running, check performance daily. Do not wait for the monthly report to find out something is underperforming.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Track real-time trends and potential brand risks across media and social platforms.</div><div class="task-context">Know what is being said about your property. Monitor reviews, social mentions, and any press coverage. If something negative is gaining traction, flag it early.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Analyze qualitative data and sentiment on earned and owned channels.</div><div class="task-context">Go beyond the numbers. Read the actual reviews, comments, and guest feedback. Patterns in sentiment often reveal opportunities that metrics alone will miss.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Review platform, partner, and technology changes and assess their impact.</div><div class="task-context">The platforms we use change constantly. Stay current on updates that affect how we reach guests. Share relevant changes with your team and agency partners.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Develop actionable insights and communicate marketing direction based on data.</div><div class="task-context">Your job is not just to collect data. It is to interpret it and tell the team what to do about it. A good Director of Marketing turns numbers into direction.</div></div>
+        </div>
+      </div>
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Tactical Marketing</span><span class="category-count">5 items</span></div><span class="category-chevron">&#9662;</span></div>
+        <div class="category-body">
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Implement plans and build deliverables.</div><div class="task-context">Research, writing, editing, design, and production. Some of this you will do yourself. Some you will manage through your team or agency partners. Either way, you own the output.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Vet influencers, media, partners, and inbound marketing opportunities.</div><div class="task-context">Not every opportunity is worth pursuing. Evaluate fit, audience, reach, and cost before committing. Protect the brand and the budget.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Manage the logistics of events, activations, partnerships, photoshoots, and media visits.</div><div class="task-context">Marketing often involves coordination-heavy projects. Own the logistics so the creative work can shine.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Launch campaigns, update systems, and publish marketing materials across channels.</div><div class="task-context">When it is go time, make sure everything is live, correct, and functioning. Double-check links, tracking codes, landing pages, and creative assets.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Double-check work as it launches for quality control and resolve issues.</div><div class="task-context">Mistakes happen. The best marketers catch them fast. Review everything in its live environment after launch, not just in the preview.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEKLY -->
+  <div class="manual-section" id="weekly">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-letter">W</div>
+      <div class="section-title">Weekly Responsibilities</div>
+      <div class="section-toggle"><span class="section-toggle-text"></span></div>
+    </div>
+    <p class="section-intro">Weekly touchpoints keep your team aligned, your stakeholders informed, and your projects on track. The daily work keeps the engine running. The weekly work makes sure the engine is pointed in the right direction.</p>
+    <div class="section-body">
+      <div class="category">
+        <div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Coordination and Meetings</span><span class="category-count">7 items</span></div><span class="category-chevron">&#9662;</span></div>
+        <div class="category-body">
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Brief your marketing team on priorities, deliverables, and deadlines.</div><div class="task-context">Start each week with clarity. Your team should know what matters most this week, what is due, and what is coming next.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Conduct 1:1s with direct reports and internal marketing meetings.</div><div class="task-context">Regular 1:1s are non-negotiable. This is where you coach, unblock, and develop your team. Do not cancel these for other meetings.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Coordinate external meetings with agencies, vendors, and brand partners.</div><div class="task-context">Your paid media agency, PR team, social partners, and other external resources need regular touchpoints. Weekly check-ins keep deliverables on track.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Attend commercial meetings to align messaging and promotions.</div><div class="task-context">Marketing does not set strategy in isolation. Show up to the commercial meetings, understand what revenue and sales need, and make sure your campaigns support the broader goals.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Lead critical path calls for renovations, relaunches, and special initiatives.</div><div class="task-context">If your property has a renovation, rebrand, or major launch coming, you should be leading or actively participating in the planning calls.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Meet with property stakeholders across departments for marketing planning.</div><div class="task-context">F&B, spa, front desk, activities. These teams create the experiences you are marketing. Build relationships and keep the communication loop open.</div></div>
+          <div class="task-item"><div class="task-title"><div class="task-bullet"></div>Share marketing performance updates and upcoming initiatives.</div><div class="task-context">Do not wait to be asked. Proactively share wins, learnings, and what is coming. A brief weekly update to the GM and key stakeholders goes a long way.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONTHLY -->
+  <div class="manual-section" id="monthly">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-letter">M</div>
+      <div class="section-title">Monthly Responsibilities</div>
+      <div class="section-toggle"><span class="section-toggle-text"></span></div>
+    </div>
+    <p class="section-intro">Monthly is where you shift from execution to evaluation. This is the cadence where you step back, look at what happened, measure it, manage your budget, and prepare for what is ahead.</p>
+    <div class="section-body">
+      <div class="category"><div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Project Management</span><span class="category-count">2 items</span></div><span class="category-chevron">&#9662;</span></div><div class="category-body"><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Close out completed projects, archive assets, and finalize documents for case studies.</div><div class="task-context">When a campaign or project wraps, close the loop. Archive the final assets, document what worked and what did not.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Coordinate with property teams to ensure timely delivery of marketing inputs.</div><div class="task-context">Photography, menu updates, event details, room renovations. Marketing depends on timely inputs from other departments. Own the follow-up.</div></div></div></div>
+      <div class="category"><div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Performance and Reporting</span><span class="category-count">3 items</span></div><span class="category-chevron">&#9662;</span></div><div class="category-body"><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Review digital marketing KPIs and evaluate channel performance.</div><div class="task-context">This is your monthly health check. Look at the full picture across site, email, social, OTA, and paid ads.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Review press reports from PR and collect data on activations and field marketing.</div><div class="task-context">Earned media is part of the marketing mix. Collect and consolidate what your PR team delivered.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Prepare monthly reporting and present to stakeholders.</div><div class="task-context">Your monthly report is how leadership understands the value marketing is delivering. Lead with insights, not just data.</div></div></div></div>
+      <div class="category"><div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Budget Management</span><span class="category-count">4 items</span></div><span class="category-chevron">&#9662;</span></div><div class="category-body"><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Review, code, and track invoices to ensure timely vendor payment.</div><div class="task-context">Vendor relationships depend on timely payment. Code invoices correctly and submit them on schedule.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Review forecasted expenses against actuals and advise finance of accruals or updates.</div><div class="task-context">Know where your budget stands at all times. Communicate proactively to finance.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Compare actual paid spend vs. monthly budget allocation.</div><div class="task-context">Paid media budgets can drift if not monitored. Check actual spend against plan monthly.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Reallocate budget based on campaign performance.</div><div class="task-context">If something is working, invest more. If something is underperforming, pull back and redirect.</div></div></div></div>
+      <div class="category"><div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Tactical Marketing</span><span class="category-count">3 items</span></div><span class="category-chevron">&#9662;</span></div><div class="category-body"><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Implement campaign changes and direction based on performance.</div><div class="task-context">Use insights from your monthly review to make adjustments.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Prepare materials for upcoming events, campaigns, and seasonal refreshes.</div><div class="task-context">Always be working one month ahead. If you are only reacting to what is in front of you, you are already behind.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Audit digital channels and make updates.</div><div class="task-context">Walk through your website, OTA listings, Google Business Profile, social profiles, and email templates monthly.</div></div></div></div>
+    </div>
+  </div>
+
+  <!-- QUARTERLY -->
+  <div class="manual-section" id="quarterly">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-letter">Q</div>
+      <div class="section-title">Quarterly Responsibilities</div>
+      <div class="section-toggle"><span class="section-toggle-text"></span></div>
+    </div>
+    <p class="section-intro">Quarterly is where you zoom out. The daily, weekly, and monthly rhythms keep the operation running. The quarterly cadence is where you evaluate whether the operation is driving the right results.</p>
+    <div class="section-body">
+      <div class="category"><div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Strategic Review</span><span class="category-count">3 items</span></div><span class="category-chevron">&#9662;</span></div><div class="category-body"><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Evaluate quarterly marketing performance vs. revenue and occupancy goals.</div><div class="task-context">Connect your KPIs to the outcomes that matter: revenue, occupancy, ADR, and direct booking share.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Plan next quarter's campaigns and activations.</div><div class="task-context">Build your campaign plan based on what you learned this quarter and what the commercial team is targeting next.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Refine marketing plan and focus areas.</div><div class="task-context">Your annual marketing plan is not static. Each quarter is an opportunity to adjust focus.</div></div></div></div>
+      <div class="category"><div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Tactical Marketing</span><span class="category-count">3 items</span></div><span class="category-chevron">&#9662;</span></div><div class="category-body"><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Update core guest communications: policy pages, hours of operation, and lifecycle touchpoints.</div><div class="task-context">These are the details guests rely on. Make sure every touchpoint reflects reality.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Refresh seasonal creative across channels.</div><div class="task-context">Update hero imagery, social content themes, email templates, and website banners. Stale creative signals a stale property.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Ensure on-property materials, sales items, and menus are updated and on brand.</div><div class="task-context">Walk the property. Check lobby collateral, in-room materials, restaurant menus, spa menus, and any printed pieces.</div></div></div></div>
+    </div>
+  </div>
+
+  <!-- ANNUAL -->
+  <div class="manual-section" id="annual">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-letter">A</div>
+      <div class="section-title">Annual Responsibilities</div>
+      <div class="section-toggle"><span class="section-toggle-text"></span></div>
+    </div>
+    <p class="section-intro">Annual planning is where strategy meets execution. This is the work that shapes the entire year ahead for your property's marketing program.</p>
+    <div class="section-body">
+      <div class="category"><div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Marketing Budget and Business Plan</span><span class="category-count">3 items</span></div><span class="category-chevron">&#9662;</span></div><div class="category-body"><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Develop the annual marketing budget and calendar aligned with hotel business goals.</div><div class="task-context">Build it from the goals down: what are we trying to achieve, and what does it cost to get there?</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Gather proposals and plans from vendors and partners, negotiate pricing.</div><div class="task-context">Give yourself enough lead time to evaluate options and negotiate effectively. Do not auto-renew without reviewing performance.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Present the marketing plan to ownership or executive committee.</div><div class="task-context">Tell a clear story that connects marketing investment to business outcomes.</div></div></div></div>
+      <div class="category"><div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Brand and Market Review</span><span class="category-count">3 items</span></div><span class="category-chevron">&#9662;</span></div><div class="category-body"><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Conduct a full brand audit covering messaging, visuals, and digital presence.</div><div class="task-context">Once a year, take a hard look at everything. Is the brand consistent across every channel?</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Benchmark performance against competitor and brand reports.</div><div class="task-context">Pull comp set data, review STR reports, and benchmark your digital performance against competitors.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Identify new market opportunities or traveler segments.</div><div class="task-context">Markets evolve. Use your annual review to look beyond your current audience.</div></div></div></div>
+      <div class="category"><div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Strategy and Positioning</span><span class="category-count">4 items</span></div><span class="category-chevron">&#9662;</span></div><div class="category-body"><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Define annual campaigns to strengthen brand awareness and direct bookings.</div><div class="task-context">Your biggest campaigns should be planned annually, not scrambled at the last minute.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Align marketing objectives with revenue, loyalty, and guest satisfaction targets.</div><div class="task-context">If revenue is focused on midweek occupancy, marketing should be driving midweek demand.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Review performance of all partners, vendors, and marketing channels.</div><div class="task-context">Evaluate each one annually. Are they delivering value? Are the economics still working?</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Develop plans for relaunches, rebrands, and major operational changes.</div><div class="task-context">If a renovation or rebrand is on the horizon, annual planning is when you scope the marketing workstream.</div></div></div></div>
+      <div class="category"><div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Training and Team Development</span><span class="category-count">2 items</span></div><span class="category-chevron">&#9662;</span></div><div class="category-body"><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Conduct annual performance reviews and set KPIs for your marketing team.</div><div class="task-context">Set clear expectations, provide honest feedback, and define measurable KPIs.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Provide training on marketing systems, technical skills, and professional development.</div><div class="task-context">The tools and platforms we use evolve constantly. Make sure your team has the skills to keep up.</div></div></div></div>
+      <div class="category"><div class="category-header" onclick="toggleCategory(this)"><div><span class="category-name">Sustainability and CSR Marketing</span><span class="category-count">2 items</span></div><span class="category-chevron">&#9662;</span></div><div class="category-body"><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Promote the hotel's sustainability initiatives and community engagement programs.</div><div class="task-context">Make sure your property's efforts are visible and authentic in marketing communications.</div></div><div class="task-item"><div class="task-title"><div class="task-bullet"></div>Ensure CSR messaging is authentic and visible in marketing communications.</div><div class="task-context">Do not greenwash. If your property has genuine sustainability practices, tell that story.</div></div></div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">EOS Hospitality</div>
+      <div class="footer-sub">Commercial Playbook<br>Internal Use Only &middot; April 2026</div>
+    </div>
+    <div class="footer-contact">
+      Questions or feedback?<br>
+      <a href="/cdn-cgi/l/email-protection#b6d5d9d8c2d7d5c2f6d3d9c5ded9c5c6dfc2d7dadfc2cf98d5d9db"><span class="__cf_email__" data-cfemail="64070b0a1005071024010b170c0b17140d1005080d101d4a070b09">[email&#160;protected]</span></a>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function toggleSection(header) {
+  header.classList.toggle('open');
+  const body = header.parentElement.querySelector('.section-body');
+  body.classList.toggle('open');
+}
+function toggleCategory(header) {
+  header.classList.toggle('open');
+  const body = header.nextElementSibling;
+  body.classList.toggle('open');
+}
+document.querySelectorAll('.jump-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      document.querySelectorAll('.manual-section').forEach(section => {
+        const h = section.querySelector('.section-header');
+        const b = section.querySelector('.section-body');
+        if (h && b) { h.classList.remove('open'); b.classList.remove('open'); }
+      });
+      const header = target.querySelector('.section-header');
